@@ -44,5 +44,18 @@
     "url": "https://github.com/molgenis/pdf-generator/issues"
   },
   "homepage": "https://github.com/molgenis/pdf-generator#readme",
-  "type": "module"
+  "type": "module",
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.org"
+  },
+  "files": [
+    "src",
+    "static",
+    ".pdfrc.example",
+    "Dockerfile",
+    "yarn.lock",
+    "state.json.example",
+    "README.md"
+  ]
 }
