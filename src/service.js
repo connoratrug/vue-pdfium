@@ -23,6 +23,7 @@ const settings = app.settings = rc('pdf', {
     baseDir: path.join(__dirname, '../'),
     dev: false,
     headless: true,
+    health: true,
     pool: {
         idleTimeoutMillis: 3000,
         max: 3,
@@ -90,7 +91,9 @@ const server = app.express.listen(app.settings.port, async() => {
     app.vue = VueRender(app)
     app.pdf = PdfRender(app)
 
-    app.lightship.signalReady()
+    if (app.settings.health) {
+        app.lightship.signalReady()
+    }
 })
 
 if (app.settings.health) {
