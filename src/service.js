@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import {__dirname} from './utils.js'
 import bodyParser from 'body-parser'
 import chokidar from 'chokidar'
