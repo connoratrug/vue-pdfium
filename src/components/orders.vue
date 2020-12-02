@@ -1,10 +1,9 @@
 <html>
     <head>
-        <link rel="stylesheet" href="http://localhost:3000/static/styles.css">
+        <link rel="stylesheet" :href="`http://localhost:${pdfium.port}/static/styles.css`">
     </head>
     <body>
-        <img class="logo" src="http://localhost:3000/static/logo.png" width="234" height="45">
-
+        <img class="logo" :src="`http://localhost:${pdfium.port}/static/logo.png`" width="234" height="45">
         <div class="order">
             <h1>Order details</h1>
             <div class="order-line">
@@ -32,7 +31,14 @@
             <h1>Selection criteria</h1>
             <div class="filter-line" v-for="filter, name in filters">
                 <div class="name">{{name}}</div>
+<<<<<<< HEAD
                 <div class="value" v-if="Array.isArray(filter)">{{filter.join(' ')}}</div>
+=======
+                <div class="value" v-if="name === 'assessment'">
+                    <span v-for="id in filter">{{assessments[id].name}} </span>
+                </div>
+                <div class="value" v-else-if="Array.isArray(filter)">{{filter.join(' ')}}</div>
+>>>>>>> 4991cb4c75fae7f007795a4459ce924c6fa972b7
                 <div class="value" v-else>{{filter}}</div>
             </div>
         </div>
